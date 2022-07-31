@@ -1,1 +1,1 @@
-# Kazuha
+# Genshin Forum
