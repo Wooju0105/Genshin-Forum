@@ -1,22 +1,26 @@
 <ka><a class="active" href="/" target="_self">
         <nav>Genshin Forum</nav>
-        <img src ="static/images/Genshin_logo.png" style="width:45px; height:18px;">
+        <img src ="{{url_for('static', filename='images/Genshin_logo.png')}}" style="width:45px; height:18px;">
     </a></ka>
 
 
-    <ka><a href="/characters" target="_self">
-        <nav>Characters</nav>
-        <img src ="static/images/chibby.png" style="width:18px; height:18px;">
-    </a></ka>
+  <ka><a href="/characters" target="_self">
+      <nav>Characters</nav>
+      <img src ="{{url_for('static', filename='images/characters/Xiao.png')}}" style="width:18px; height:18px;">
+  </a></ka>
 
 
-    <zu><a href="file:///C:/Users/talon/Desktop/kazuha/In-game.html" class="Kazuha" target="_self">
-      <nav>In-game</nav>
-      <img src ="static/images/chibby 2.png" style="width:18px; height:18px;">
-    </a></zu>
+  <zu><a href="file:///C:/Users/talon/Desktop/kazuha/In-game.html" class="Kazuha" target="_self">
+    <nav>Comment</nav>
+    <img src ="{{url_for('static', filename='images/characters/Kazuha.png')}}" style="width:18px; height:18px;">
+  </a></zu>
 
+  <xi><a href="/register" target="_self">
+  <nav>Register</nav>
+  <img src= "{{url_for('static', filename='images/characters/Tartaglia.png')}}" style="width:18px; height:18px;">
+  </a></xi>
 
-    <ha><a href="file:///C:/Users/talon/Desktop/kazuha/Recommendations.html" target="_self">
-    <nav>Recommended</nav>
-    <img src= "static/images/chibby 3.png" style="width:18px; height:18px;">
-    </a></ha>
+  <ao><a href="file:///C:/Users/talon/Desktop/kazuha/Recommendations.html" target="_self">
+  <nav>Login</nav>
+  <img src= "{{url_for('static', filename='images/characters/Ayato.png')}}" style="width:18px; height:18px;">
+  </a></ao>

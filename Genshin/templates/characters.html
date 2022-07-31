@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<p>
-    <a href="/teddy/{{teddy[0]}}">{{ teddy[1] }}</a>
-</p>
-
+    {% for characters in characters %}
+    <div class="spacing"></div>
+        <h1>
+        <a href="/characters/{{characters[0]}}" style="font-family: HYWenHei 85W;">{{ characters[1] }}</a>
+        <div class="spacing1"></div>
+        <img src="static/images/Teyvat2.jpg" class="illust1">
+        </h1>
+    {% endfor %}
 {% endblock %}

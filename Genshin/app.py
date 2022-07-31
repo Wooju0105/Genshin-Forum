@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, flash, render_template, request, redirect, session
 from config import Config
 import sqlite3
 import random
@@ -24,29 +24,40 @@ def characters():
     conn.close()
     return render_template("characters.html", characters=characters)
 
-@app.route('/register', methods=['GET','POST']) #registering the user info.
+@app.route('/characters/<int:id>')
+def des(id):
+  conn = sqlite3.connect(app.config['DATABASE'])
+  cur = conn.cursor()
+  cur.execute("SELECT * FROM Characters WHERE id=?;",(id,))
+  characters = cur.fetchone()
+  conn.close()
+  return render_template("description.html", characters = characters)
+
+@app.route('/comment', methods=["GET","POST"])
+def comment():
+    if request.method == "POST":
+        conn = sqlite3.connect(app.config['DATABASE'])
+        cur = conn.cursor()
+        title = request.form["title"]
+        feedback = request.form["feedback"]
+        sql = "INSERT INTO "
+
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    if request.method == 'GET':
-        return render_template("register.html")
-    else:
-        #Create tne user info.
-        userid = request.form.get('userid') 
-        username = request.form.get('username')
-        password = request.form.get('password')
-        re_password = request.form.get('re_password')
-        print(password) #Check if there is actually a password.
+        if request.method == 'GET':
+            return render_template("register.html")
 
-
-        if not (userid and username and password and re_password) :
-            return "Please fill out all of the form."
-        elif password != re_password:
-            return "Check the password again."
-        else: #Successful output
-            cursor = cursor()
-            sql = "INSERT INTO user (userid, username, password, re_password) VALUES (?, ?, ?, ?)"
-            cursor.execute(sql)
-            results = cursor.fetchall()
-            return "Successfully registered!", redirect('/home')
+        if request.method == 'POST':
+            userid = request.form['userid']
+            username = request.form['username']
+            password = request.form['password']
+            re_password = request.form['re_password']
+            conn = sqlite3.connect(app.config['DATABASE'])
+            cs = conn.cursor()
+            cs.execute('INSERT INTO user (userid, username, password, re_password) VALUES(?,?,?,?)',(userid,username,password,re_password))
+            conn.commit()
+            conn.close()
+        return redirect('/')
 
 if __name__ == "__main__":
     app.run(debug=True)
