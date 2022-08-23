@@ -1,26 +1,32 @@
-<ka><a class="active" href="/" target="_self">
+<a class="ka" href="/" target="_self">
         <nav>Genshin Forum</nav>
         <img src ="{{url_for('static', filename='images/Genshin_logo.png')}}" style="width:45px; height:18px;">
-    </a></ka>
+    </a>
 
 
-  <ka><a href="/characters" target="_self">
+  <a class="ka" href="/characters" target="_self">
       <nav>Characters</nav>
       <img src ="{{url_for('static', filename='images/characters/Xiao.png')}}" style="width:18px; height:18px;">
-  </a></ka>
+  </a></p>
 
 
-  <zu><a href="file:///C:/Users/talon/Desktop/kazuha/In-game.html" class="Kazuha" target="_self">
-    <nav>Comment</nav>
+  <a class="zu" href="/skills" class="Kazuha" target="_self">
+    <nav>Skills</nav>
     <img src ="{{url_for('static', filename='images/characters/Kazuha.png')}}" style="width:18px; height:18px;">
-  </a></zu>
+  </a>
 
-  <xi><a href="/register" target="_self">
-  <nav>Register</nav>
-  <img src= "{{url_for('static', filename='images/characters/Tartaglia.png')}}" style="width:18px; height:18px;">
-  </a></xi>
+  {% if session["username"] %}
 
-  <ao><a href="file:///C:/Users/talon/Desktop/kazuha/Recommendations.html" target="_self">
-  <nav>Login</nav>
-  <img src= "{{url_for('static', filename='images/characters/Ayato.png')}}" style="width:18px; height:18px;">
-  </a></ao>
+    <p class="session">Welcome {{session["username"]}}!</p>
+
+  {% else %}
+    </p><a class="xi" href="/register" target="_self">
+    <nav>Register</nav>
+    <img src= "{{url_for('static', filename='images/characters/Tartaglia.png')}}" style="width:18px; height:18px;">
+    </a>
+
+    </p><a class="ao" href="/login_page" target="_self">
+    <nav>Login</nav>
+    <img src= "{{url_for('static', filename='images/characters/Ayato.png')}}" style="width:18px; height:18px;">
+    </a>
+  {% endif %}
