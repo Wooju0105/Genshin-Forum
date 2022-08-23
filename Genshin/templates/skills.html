@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for skills in skills %}
+    <div class="spacing"></div>
+        <h1>
+        <a href="/skills/{{skills[0]}}" style="font-family: HYWenHei 85W;">{{ skills[1] }}</a>
+        <div class="spacing1"></div>
+        <img src="static/images/Teyvat2.jpg" class="illust1">
+        </h1>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="spacing"></div>
+
+    <h1>Login here!</h1>
+    <div class="spacing"></div>
+    <form method="POST", actions = '/login_page'>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Username" name="username"/>
+
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" name="password"/>
+
+        <div class="spacing"></div>
+        
+        <button type="submit">Login</button>
+        <div class="spacing"></div>
+{% endblock %}

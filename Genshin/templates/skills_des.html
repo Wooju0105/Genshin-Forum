@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="spacing"></div>
+<h1>{{ skills[1] }}</h1><br/>
+
+<div id="content">
+  {% if skills[5] %}
+    <p>Auto attack</p>
+    <p>{{ skills[1] }}</p>
+    <img src="{{ skills [5] }}" class="illust2"/>
+  {% endif %}
+
+  {% if skills[6] %}
+    <p>E skill</p>
+    <p>{{ skills[2] }}</p>
+    <img src="{{ skills [6] }}" class="illust2"/>
+  {% endif %}
+
+  {% if skills[7] %}
+    <p>Q skill</p>
+    <p>{{ skills[3] }}</p>
+    <img src="{{ skills [7] }}" class="illust2"/>
+  {% endif %}
+
+  {% if skills[7] %}
+    <p>Q skill 2</p>
+    <p>{{ skills[4] }}</p>
+    <img src="{{ skills [8] }}" class="illust2"/>
+  {% endif %}
+</div>
+<div class="spacing"></div>
+{% endblock %}

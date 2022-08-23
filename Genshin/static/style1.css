@@ -169,47 +169,36 @@ body {
     width: 100%;
     
   }
-  
-  
-  ha {
+
+  .ha {
     float: left;
-  }
-  
-  ha a {
     display: block;
     color: rgb(255, 255, 255);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
-  
-  
-  ha a:hover:not(.active) {
+
+  .ha a:hover:not(.active) {
     background-color: rgb(196, 196, 196);
   }
   
-  zu {
-  float: left;
-  }
-  
-  zu a {
+  .zu {
+    float: left;
     display: block;
     color: rgb(255, 255, 255);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
-  
-  zu a:hover:not(.active) {
+
+  .zu a:hover:not(.active) {
     background-color: rgb(255, 232, 180);
   }
   
   /* code for instagram pink colour hover over*/
-  ka {
+  .ka {
     float: left;
-  }
-  
-  ka a {
     display: block;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -217,15 +206,12 @@ body {
     text-decoration: none;
   }
   
-  ka a:hover:not(.active) {
+  .ka a:hover:not(.active) {
     background-color: rgb(152, 236, 255);
   }
   
-  xi {
+  .xi {
     float: right;
-  }
-  
-  xi a {
     display: block;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -233,15 +219,22 @@ body {
     text-decoration: none;
   }
   
-  xi a:hover:not(.active) {
+  .xi a:hover:not(.active) {
     background-color: rgb(119, 131, 255);
   }
 
-  ao {
+  .session {
     float: right;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px; 
+    color:rgb(0, 0, 0); 
+    text-align: center;
   }
-  
-  ao a {
+
+  .ao {
+    float: right;
     display: block;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -249,7 +242,7 @@ body {
     text-decoration: none;
   }
   
-  ao a:hover:not(.active) {
+  .ao a:hover:not(.active) {
     background-color: rgb(138, 255, 206);
   }
   
