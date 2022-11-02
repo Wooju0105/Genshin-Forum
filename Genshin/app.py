@@ -76,12 +76,12 @@ def register():
             conn.close()
         return redirect('/') # Redirect to the homepage. 
 
-@app.route('/login_page', methods = ['GET', 'POST'])
+@app.route('/login_page', methods = ['GET', 'POST']) #GET, POST methods to match the user input and the information on the database. 
 def login_page():
-    if request.method == 'GET':
+    if request.method == 'GET': #If method = GET; when the user clicks on the login tab, directed to the login web page. 
         return render_template('login_page.html')
 
-    if request.method == 'POST':
+    if request.method == 'POST': #If method = POST; asks the user to input the information they registered before. 
         username = request.form['username']
         password = request.form['password']
         print(username, password)
