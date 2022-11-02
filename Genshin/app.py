@@ -104,4 +104,4 @@ def login_page():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True) #This runs the app on the debug mode, so whenever changes are made, it can be applied at that moment without restarting the route.
